@@ -1,0 +1,256 @@
+:root {
+  --bg: #f5efe3;
+  --surface: rgba(255, 252, 247, 0.88);
+  --surface-strong: #fffdf8;
+  --text: #1f2933;
+  --muted: #5b6773;
+  --line: rgba(31, 41, 51, 0.12);
+  --accent: #a63d40;
+  --accent-dark: #7d2830;
+  --accent-soft: #f4d9c6;
+  --shadow: 0 20px 45px rgba(84, 60, 44, 0.12);
+  --radius: 22px;
+  --max: 1120px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(255, 232, 214, 0.85), transparent 32%),
+    radial-gradient(circle at top right, rgba(244, 217, 198, 0.7), transparent 26%),
+    linear-gradient(180deg, #f7f1e7 0%, #efe6d6 100%);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero,
+.subpage-header {
+  padding: 1.5rem 1.25rem 3rem;
+}
+
+.nav,
+.hero-content,
+.subpage-intro,
+.section,
+.footer {
+  width: min(var(--max), calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1.1rem;
+  background: rgba(255, 250, 244, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(12px);
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+}
+
+.brand {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: var(--muted);
+}
+
+.hero-content,
+.subpage-intro {
+  padding-top: 4rem;
+}
+
+.hero-content h1,
+.subpage-intro h1 {
+  margin: 0.2rem 0 1rem;
+  max-width: 14ch;
+  font-size: clamp(2.7rem, 6vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.lede {
+  max-width: 62ch;
+  font-size: 1.08rem;
+  color: var(--muted);
+}
+
+.eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.75rem;
+}
+
+.button,
+.button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.3rem;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.button {
+  background: var(--accent);
+  color: #fff8f1;
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--accent-dark);
+  border: 1px solid rgba(166, 61, 64, 0.28);
+}
+
+.button:hover,
+.button-secondary:hover,
+.text-link:hover {
+  transform: translateY(-1px);
+}
+
+.section {
+  padding: 1.5rem 0 2rem;
+}
+
+.section-heading {
+  margin-bottom: 1rem;
+}
+
+.section-heading h2 {
+  margin: 0.35rem 0 0;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+}
+
+.card,
+.artifact-card,
+.info-card,
+.image-frame {
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.card,
+.info-card {
+  padding: 1.5rem;
+}
+
+.prose p {
+  margin-top: 0;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+.artifact-grid,
+.info-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.artifact-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.artifact-card {
+  padding: 1.35rem;
+}
+
+.artifact-card-featured {
+  background:
+    linear-gradient(180deg, rgba(255, 247, 238, 0.96), rgba(252, 239, 224, 0.92));
+}
+
+.artifact-tag {
+  margin: 0 0 0.3rem;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+.artifact-card h3,
+.info-card h3 {
+  margin-top: 0;
+}
+
+.text-link {
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
+.artifact-page {
+  padding-bottom: 2rem;
+}
+
+.image-frame {
+  padding: 1rem;
+}
+
+.info-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.footer {
+  padding: 1rem 0 2.5rem;
+  color: var(--muted);
+}
+
+@media (max-width: 720px) {
+  .nav {
+    border-radius: 28px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hero-content,
+  .subpage-intro {
+    padding-top: 2.75rem;
+  }
+
+  .hero-content h1,
+  .subpage-intro h1 {
+    max-width: none;
+  }
+}
